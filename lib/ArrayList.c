@@ -65,11 +65,10 @@ void printArrayList(ArrayList* a) {
 
 /**
  * Prints the memory structure of the ArrayList.
- * 0 is interpreted as NIL! Just for demonstration purposes.
  * @param a
  * @param capacity
  */
-void printMemory(int* a, int capacity) {
+void printMemory(int* a, int size, int capacity) {
     for (int i = 0; i < capacity; i++) {
         printf("| %-2d", i);
     }
@@ -79,8 +78,8 @@ void printMemory(int* a, int capacity) {
     }
     printf("|\n");
     for (int i = 0; i < capacity; i++) {
-        if(a[i] == 0) {
-            printf("|\033[0;31m%s\033[0m", "NIL");
+        if(i >= size) {
+            printf("|\033[0;31m%3d\033[0m", a[i]);
         } else {
             printf("|%3d", a[i]);
         }

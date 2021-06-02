@@ -14,7 +14,7 @@ void delete(ArrayList* a, int i) {
         a->data[j] = a->data[j+1];
     }
     // added by Dominik
-    a->data[a->size] = 0;
+    // a->data[a->size] = 0;
 }
 
 int main() {
@@ -23,7 +23,7 @@ int main() {
     // Äquivalent zu address(list) im Pseudocode.
     pushBack(&a, 7);
     pushBack(&a, 23);
-    printMemory(a.data, a.capacity);
+    printMemory(a.data, a.size, a.capacity);
     pushBack(&a, 42);
     pushBack(&a, 66);
 //    pushBack(&a, 79);
@@ -32,11 +32,11 @@ int main() {
 //    pushBack(&a, 432);
 //    pushBack(&a, 666);
 
-    printMemory(a.data, a.capacity);
+    printMemory(a.data, a.size, a.capacity);
 
     delete(&a, 2);
 
-    printMemory(a.data, a.capacity);
+    printMemory(a.data, a.size, a.capacity);
 
     return 0;
 }

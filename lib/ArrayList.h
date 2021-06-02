@@ -23,6 +23,6 @@ int popBack(ArrayList* a);
 
 void printArrayList(ArrayList* a);
 
-void printMemory(int* a, int capacity);
+void printMemory(int* a, int size, int capacity);
 
 #endif //AUD_LISTEN_ARRAYLIST_H
