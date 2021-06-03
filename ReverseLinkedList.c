@@ -28,7 +28,7 @@ void reverseListValue(LinkedList *list) {
  * Kehrt die Liste um. Algorithmus von Daniel G.
  * @param list
  */
-void reverseListPointer(LinkedList *list) {
+void reverseListPointer(LinkedList* list) {
     ListElement* it = list->first;
     list->first = list->last;
     list->last = it;
@@ -38,6 +38,24 @@ void reverseListPointer(LinkedList *list) {
         it->prev = temp;
         it = temp;
     }
+}
+
+void reverseRek(ListElement* elem) {
+    ListElement* temp = elem->next;
+    elem->next = elem->prev;
+    elem->prev = temp;
+    if (elem->prev == NULL) {
+        return;
+    } else {
+        reverseRek(elem->prev);
+    }
+}
+
+void reverseListRecursive(LinkedList* list) {
+    reverseRek(list->first);
+    ListElement* temp = list->first;
+    list->first = list->last;
+    list->last = temp;
 }
 
 int main() {
@@ -54,7 +72,8 @@ int main() {
 
     printf("Pre reverse: \n");
     printLinkedList(&list);
-    reverseListPointer(&list);
+    reverseListRecursive(&list);
+    //reverseListPointer(&list);
     //reverseListValue(&list);
     printf("Post reverse: \n");
     printLinkedList(&list);
