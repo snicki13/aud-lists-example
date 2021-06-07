@@ -1,13 +1,9 @@
-//
-// Created by Dominik Kröll on 02.06.21.
-//
-
 #include <math.h>
 #include <printf.h>
 #include "lib/LinkedList.h"
 
 /**
- * Kehrt die Liste um. Algorithmus von Anne-Kristin W.
+ * Kehrt die Liste mittels Wertetausch um. Algorithmus von Anne-Kristin W.
  * @param list die Liste
  */
 void reverseListValue(LinkedList *list) {
@@ -25,7 +21,7 @@ void reverseListValue(LinkedList *list) {
 }
 
 /**
- * Kehrt die Liste um. Algorithmus von Daniel G.
+ * Kehrt die Liste via Pointer umhaengen um. Algorithmus von Daniel G.
  * @param list
  */
 void reverseListPointer(LinkedList* list) {
@@ -51,6 +47,10 @@ void reverseRek(ListElement* elem) {
     }
 }
 
+/**
+ * Kehrt die Liste via Pointer rekursiv um. Algorithmus von Absi M.
+ * @param list
+ */
 void reverseListRecursive(LinkedList* list) {
     reverseRek(list->first);
     ListElement* temp = list->first;
