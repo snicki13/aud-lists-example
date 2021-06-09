@@ -9,7 +9,7 @@
 LinkedList newList() {
     LinkedList* list = malloc(sizeof(LinkedList));
     list->size = 0;
-    list->first = NULL;
+    list->first = NULL; // 0x0
     list->last = NULL;
     return *list;
 }

@@ -45,9 +45,12 @@ int main() {
     printf("Pre delete: \n");
     printLinkedList(&list);
 
+    ListElement* pt = list.first;
+
     delete(&list, list.first);
-    delete(&list, list.first);
-    delete(&list, list.first);
+
+    // free(pt);
+    //printf("%d\n", pt->value);
 
     printf("Post delete: \n");
     printLinkedList(&list);

@@ -19,8 +19,8 @@ typedef struct ListElement {
  */
 typedef struct LinkedList {
     int size;
-    struct ListElement *first;
-    struct ListElement *last;
+    struct ListElement* first;
+    struct ListElement* last;
 } LinkedList;
 
 void printList(LinkedList *list);
